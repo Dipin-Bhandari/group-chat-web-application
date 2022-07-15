@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import "./Chat.css";
 import ChatHeader from "./ChatHeader";
@@ -23,7 +22,7 @@ export function Chat() {
  // const [data,setData] = useState([]);
 const [fileUrl,setFileUrl]=React.useState(null)
 const [users,setUsers]=React.useState([])
-const avatar=fileUrl;
+
 const onFileChange=async(e)=>{
 const file=e.target.files[0];
 const storageRef=aws.storage().ref();
@@ -117,21 +116,15 @@ fetchUsers()
             timestamp={message.timestamp}
             message={message.message}
             user={message.user}
-            url={message.message}
+        //    url={message.user}
           />
         ))}
 
 
 
-{users.map((user) => (
-          <Message
-            key={user.name}
-            timestamp={avatar.timestamp}
-            message={user.name}
-            user={user.name}
-            url={user.avatar}
-          />
-        ))}
+
+{users.map()}
+
 
 
 
@@ -141,13 +134,9 @@ fetchUsers()
 
       <div className="chat_input">
         <AddCircleIcon  fontSize="large" />
-        <p>
-          <img src='url'/>
-        </p>
         <center>
-          <form onSubmit={onSubmit}  >
       <input type="file" onChange={onFileChange}/>
-    </form>
+     
       </center>
       
       
@@ -185,3 +174,5 @@ fetchUsers()
     </div>
   );
 }
+
+

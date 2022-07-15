@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import './App.css';
-import Chat from './Chat';
+import { Chat } from './Chat';
 import Login from './Login';
 import Sidebar from './Sidebar';
 import { selectUser } from './userSlice';
@@ -10,7 +10,9 @@ import { auth } from './firebase';
 
 
 function App() {
-  const dispatch = useDispatch();
+
+
+const dispatch = useDispatch();
   const user = useSelector(selectUser);
 
   useEffect(() => {

@@ -9,6 +9,7 @@
 .chat_messages {
   flex: 1;
   overflow : scroll;
+  font-size: large;
 }
 .chat_messages  ::-webkit-scrollbar
 {
@@ -25,6 +26,9 @@ display: none;
   margin: 20px;
   border-top: 1px solid gray;
   background-color: #474053;
+    
+  
+  
 }
 
 .chat_input > form > input {
